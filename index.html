@@ -1,0 +1,40 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot application</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        .chat-form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I Am A Chatbot</h1>
+        <form class="chat-form" action="/chat" method="post">
+            <input type="text" id="user_input" name="message" size="50"><br><br>
+            <button type="submit">Ask Me</button>
+        </form>
+        <div id="chatbot-response">
+            {% if response %}
+                <p>{{ response }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
